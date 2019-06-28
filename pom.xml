@@ -54,7 +54,14 @@
       		<version>1.2.1</version>
       		<scope>compile</scope>
     	</dependency>
-		
+    	
+    	<!-- https://mvnrepository.com/artifact/org.apache.jclouds/jclouds-all -->
+		<dependency>
+    		<groupId>org.apache.jclouds</groupId>
+    		<artifactId>jclouds-all</artifactId>
+    		<version>1.9.3</version>
+		</dependency>
+      
 	</dependencies>
 
 	<build>

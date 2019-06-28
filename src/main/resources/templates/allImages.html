@@ -5,10 +5,9 @@
 <title>Images List</title>
 </head>
 <body>
-	<h1>Image List</h1>
-	<div th:each="image : ${images}">
-		<!-- <h3 th:text="${image.imgPath}"/> --> 
-		<img th:src="${image.imgPath}" width="200" height="200" alt="ok"/>
+	<h1 align="center">All Images List</h1>
+	<div align="center">
+		<img align="center" border="solid" th:each="image: ${images}" th:src="${image.imgPath}" width="300" height="300" alt="ok"/>
 	</div>
 </body>
 </html>

@@ -19,42 +19,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UploadController {
-//	private static String UPLOAD_FOLDER = "/Users/user/eclipse/";
-//	ArrayList<ImageData> allPath;
-	//ArrayList<byte[]> allImage;
-	
-//	@GetMapping("/")
-//	@ResponseBody
-//	public ArrayList<ImageData> index() {
-////		public ArrayList<String> index(RedirectAttributes redirect) {
-//		Path path = Paths.get(UPLOAD_FOLDER);
-//		allPath = new ArrayList<ImageData>();
-//		//allImage = new ArrayList<byte[]>();
-//		Stream<Path> stream = null;
-//			try {
-//				stream = Files.list(path);
-//				stream.forEach(a -> {
-//					if(a.toString().endsWith(".jpg"))
-//						//try {
-//							allPath.add(new ImageData(a.toString()));
-//							//byte data[] = Files.readAllBytes(a);
-//							//allImage.add(data);
-//			//				allImage.add(Files.readAllBytes(a));
-//						//} catch (IOException e) {
-//						//	e.printStackTrace();
-//						//}
-//						//allPath.add(a.toString());
-//					//redirect.addFlashAttribute("images", allImage);
-//					//redirect.addFlashAttribute("images",allPath);
-//					//System.out.println(redirect.getFlashAttributes());
-//				});
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			//return allPath;
-////		return "redirect:allImage";
-//			return allPath;
-//	}
 	
 	@GetMapping("/")
 	public String showImages(RedirectAttributes redirect) {
@@ -81,10 +45,6 @@ public class UploadController {
 			return "redirect:uploadStatus";
 		}
 		try {
-//			byte bytes[] = file.getBytes();
-//			Path path = Paths.get(UPLOAD_FOLDER, file.getOriginalFilename());
-			//Files.write(path, bytes);
-			//Amazon AWS for file uploading below 3 lines
 			AWSS3Images cBucket = new AWSS3Images();
 			System.out.println("Sending to AWS Bucket Object");
 			cBucket.writeImage(convertMultiPartToFile(file));
